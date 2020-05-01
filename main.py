@@ -1,3 +1,5 @@
 import os
 import tkinter
-print('puto el que lo lea')
+print('hello world')
+x = 1 + 2
+print(x)
