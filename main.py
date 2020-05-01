@@ -1,14 +1,21 @@
 import os
 from tkinter import *
-print('hola mundo')
+from PIL import Image
+from tkinter import messagebox
+class App:
+    def __init__(self,master):
+            frame = Frame(master)
+            frame.pack()
+            self.button= Button(frame,text='X',fg='blue',command = frame.quit())
+            self.button.pack(side=BOTTOM)
 
-master = Tk()
+            self.easter_egg = Button(frame,text='JIJI',fg='pink',command = self.func_egg)
+            self.easter_egg.pack(side= TOP)
+    def func_egg(self):
+        messagebox.showinfo('Easter Egg','EL JAJAS ESTUVO AQUI XD')
 
-w = Canvas(master, width=200, height=100)
-w.pack()
-w.create_line(0,0,200,100)
-w.create_line(0,100,200,0, fill='red',dash=(4,4))
+root= Tk()
 
-w.create_rectangle(50, 25, 150, 75, fill='blue')
+app = App(root)
 
 mainloop()
