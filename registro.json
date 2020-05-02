@@ -2,7 +2,10 @@
     "alumnos":{"Nombre":"Moises",
     "Apellido Paterno":"Gana",
     "Apellido Materno":"Obregon",
-    "Descripcion":"Profesor de Cetys"}
+    "Descripcion":"Profesor de Cetys",
+    "Dia de nacimiento": "17",
+    "Mes de nacimiento": "02",
+    "Año de nacimiento": "1994"}
 
     }
 
