@@ -1,56 +1,44 @@
-import os
 from tkinter import *
 from PIL import Image, ImageGrab
 from tkinter import messagebox
 from logica_registro import *
 
 root = Tk()
-#root.overrideredirect(True) # removes title bar
+root.resizable(False, False)
+root.geometry("360x640")
+root.title('REGISTRO DE ALUMNOS')
 
-img = ImageGrab.grab()
-#Cambio de prueba
 
-def get_screen_size():
-    temp = str(img.size)
-    return temp.split('x')
-user_w = get_screen_size()
-user_h = get_screen_size()
-
-get_screen_size()
+def remove_title_bar():
+    """Remueve la barra de titulo de Windows y la hace snap."""
+    root.overrideredirect(True)  # removes title bar
 
 
 class App:
+    """CLASE donde se inicializa el programa."""
+
     def __init__(self, master):
-        self.frame = Frame(master, width=1600, height=900, bg="red")
-        self.frame.pack(fill=X,expand=True)
-        self.background = Canvas(master, bg='blue')
-        self.background.pack(fill=X)
+        """INICIALIZACION DEL APP."""
+        titulo = Label(master,text='USUARIOS',width=20,bg="lawn green").grid(
+            row=0, column=0, columnspan=3, sticky=NW)
 
+        label_fill_name = Label(master, text='NOMBRE:').grid(
+            row=1, column=0, columnspan=1, sticky=W)
+        fill_name = Entry(master, bg='salmon').grid(
+            row=1, column=2, columnspan=2)
+        
 
-        # self.register_window()
     def initial_window(self):
-        top_frame = Frame(self.frame, bg='green')
-        top_frame.pack(side=TOP,fill=X,expand=True)
-        titulo = Label(top_frame, text='Alumnos',bg='green')
-        titulo.pack(side=LEFT)
+        """INICIALIZACION DEL MAIN VIEW O INITIAL VIEW."""
 
-        quit_button = Button(top_frame, text='X', bg='red',
-                             command=root.destroy)
-        quit_button.pack(side=RIGHT)
+        """
+        quit_button = Button(self.frame, text='X', bg='tomato',
+                             command=root.destroy)  # ESTE BOTON DESTRUYE/CIERRA EL PROGRAMA
+        quit_button.pack(side=RIGHT)"""
 
     def func_egg(self):
+        """PEQUENO EASTER EGG DE PRUEBA."""
         return messagebox.showinfo('Easter Egg', 'EL JAJAS ESTUVO AQUI XD')
-
-    def fetch_text(self, arg):  # funcion para leer el texto de los entry boxes de nombre
-        return arg.get()
-
-    def register_window(self):
-
-        input_nombre = Entry()
-        input_nombre.pack()
-        confirm_button = Button(
-            state=DISABLED, Text='Haz click para confirmar nombre', command=self.func_egg())
-        confirm_button.pack()
 
 
 app = App(root)
