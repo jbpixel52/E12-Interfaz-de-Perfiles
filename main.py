@@ -11,17 +11,6 @@ img = ImageGrab.grab()
 # Cambio de prueba
 
 
-def get_screen_size():
-    temp = str(img.size)
-    return temp.split('x')
-
-
-user_w = get_screen_size()
-user_h = get_screen_size()
-
-get_screen_size()
-
-
 class App:
     """CLASE donde se inicializa el programa."""
 
@@ -50,7 +39,7 @@ class App:
         confirm_button.pack(side=RIGHT)
 
     def func_egg(self):
-        """ PEQUENO EASTER EGG DE PRUEBA."""
+        """PEQUENO EASTER EGG DE PRUEBA."""
         return messagebox.showinfo('Easter Egg', 'EL JAJAS ESTUVO AQUI XD')
 
     def fetch_text(self, arg):
