@@ -6,7 +6,7 @@ from logica_registro import *
 
 
 root = Tk()
-root.overrideredirect(True) # removes title bar
+#root.overrideredirect(True) # removes title bar
 
 img = ImageGrab.grab()
 
