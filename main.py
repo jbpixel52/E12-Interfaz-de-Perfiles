@@ -11,8 +11,6 @@ def remove_title_bar():
     root.overrideredirect(True)  # removes title bar
 
 
-img = ImageGrab.grab()
-
 
 class App:
     """CLASE donde se inicializa el programa."""
