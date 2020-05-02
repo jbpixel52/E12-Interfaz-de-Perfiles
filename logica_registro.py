@@ -27,4 +27,15 @@ def fetch_text(arg):
 
         """
         return arg.get()
+
+def get_data():
+    """ HACER LOS DATOS UN DICT."""
+    nombre =  fetch_text()
+
+
+def json_read():
+    """Descripcion."""
+    with open('registro.json', "r") as write_file:
+        datos = dumps('alumnos')
+
 fill_lists()

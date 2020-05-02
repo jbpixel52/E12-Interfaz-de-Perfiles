@@ -4,6 +4,9 @@ from tkinter import messagebox
 from logica_registro import *
 
 root = Tk()
+root.resizable(False,False)
+root.geometry("360x640")
+root.title('REGISTRO DE ALUMNOS')
 
 
 def remove_title_bar():
@@ -17,31 +20,24 @@ class App:
 
     def __init__(self, master):
         """INICIALIZACION DEL APP."""
-        self.frame = Frame(master, width=1600, height=900, bg="red")
-        self.frame.pack(fill=X, expand=True)
-        self.background = Canvas(master, bg='blue')
-        self.background.pack(fill=X)
+        
+        titulo = Label(master, text='Alumnos', bg='green').grid(row=0,column=0,columnspan=15, sticky=W)
+        label_fill_name = Label(master,text='NOMBRE:').grid(row=1,column=1,columnspan=3,sticky=W)
+        fill_name = Entry(master, bg='salmon').grid(row=1,column=4,columnspan=2)
 
     def initial_window(self):
         """INICIALIZACION DEL MAIN VIEW O INITIAL VIEW."""
-        top_frame = Frame(self.frame, bg='green')
-        top_frame.pack(side=TOP, fill=X, expand=True)
-        titulo = Label(top_frame, text='Alumnos', bg='green')
-        titulo.pack(side=LEFT)
 
-        quit_button = Button(top_frame, text='X', bg='red',
+        """
+        quit_button = Button(self.frame, text='X', bg='tomato',
                              command=root.destroy)  # ESTE BOTON DESTRUYE/CIERRA EL PROGRAMA
-        quit_button.pack(side=RIGHT)
-        confirm_button = Button(
-            state=DISABLED, Text='Haz click para confirmar nombre',
-            command=self.func_egg())
-        confirm_button.pack(side=RIGHT)
+        quit_button.pack(side=RIGHT)"""
 
     def func_egg(self):
         """PEQUENO EASTER EGG DE PRUEBA."""
         return messagebox.showinfo('Easter Egg', 'EL JAJAS ESTUVO AQUI XD')
 
-    
+
 
 
 app = App(root)
