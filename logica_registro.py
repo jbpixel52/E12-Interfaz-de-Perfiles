@@ -8,6 +8,7 @@ user_inputs = {'Nombre', 'Apellido Paterno',
 
 
 def fill_lists():
+    """Rellana las listas de opciones."""
     for dia in range(31):
         dias.append(dia)
     for mes in range(12):
