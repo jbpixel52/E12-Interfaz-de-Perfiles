@@ -4,7 +4,7 @@ from tkinter import messagebox
 from logica_registro import *
 
 root = Tk()
-root.resizable(False,False)
+root.resizable(False, False)
 root.geometry("360x640")
 root.title('REGISTRO DE ALUMNOS')
 
@@ -14,16 +14,19 @@ def remove_title_bar():
     root.overrideredirect(True)  # removes title bar
 
 
-
 class App:
     """CLASE donde se inicializa el programa."""
 
     def __init__(self, master):
         """INICIALIZACION DEL APP."""
+        titulo = Label(master,text='USUARIOS',width=20,bg="lawn green").grid(
+            row=0, column=0, columnspan=3, sticky=NW)
+
+        label_fill_name = Label(master, text='NOMBRE:').grid(
+            row=1, column=0, columnspan=1, sticky=W)
+        fill_name = Entry(master, bg='salmon').grid(
+            row=1, column=2, columnspan=2)
         
-        titulo = Label(master, text='Alumnos', bg='green').grid(row=0,column=0,columnspan=15, sticky=W)
-        label_fill_name = Label(master,text='NOMBRE:').grid(row=1,column=1,columnspan=3,sticky=W)
-        fill_name = Entry(master, bg='salmon').grid(row=1,column=4,columnspan=2)
 
     def initial_window(self):
         """INICIALIZACION DEL MAIN VIEW O INITIAL VIEW."""
@@ -36,8 +39,6 @@ class App:
     def func_egg(self):
         """PEQUENO EASTER EGG DE PRUEBA."""
         return messagebox.showinfo('Easter Egg', 'EL JAJAS ESTUVO AQUI XD')
-
-
 
 
 app = App(root)
