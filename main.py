@@ -1,14 +1,17 @@
-import os
 from tkinter import *
 from PIL import Image, ImageGrab
 from tkinter import messagebox
 from logica_registro import *
 
 root = Tk()
-# root.overrideredirect(True) # removes title bar
+
+
+def remove_title_bar():
+    """Remueve la barra de titulo de Windows y la hace snap."""
+    root.overrideredirect(True)  # removes title bar
+
 
 img = ImageGrab.grab()
-# Cambio de prueba
 
 
 class App:
@@ -20,8 +23,6 @@ class App:
         self.frame.pack(fill=X, expand=True)
         self.background = Canvas(master, bg='blue')
         self.background.pack(fill=X)
-
-        # self.register_window()
 
     def initial_window(self):
         """INICIALIZACION DEL MAIN VIEW O INITIAL VIEW."""
