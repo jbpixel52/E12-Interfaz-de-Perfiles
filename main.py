@@ -41,17 +41,7 @@ class App:
         """PEQUENO EASTER EGG DE PRUEBA."""
         return messagebox.showinfo('Easter Egg', 'EL JAJAS ESTUVO AQUI XD')
 
-    def fetch_text(self, arg):
-        """
-
-        Funcion para leer el texto de los entry boxes de nombre.
-
-        PARAMETRO:
-        arg: este argumento es cualquier Entry widget
-        regresa lo que este dentro.
-
-        """
-        return arg.get()
+    
 
 
 app = App(root)

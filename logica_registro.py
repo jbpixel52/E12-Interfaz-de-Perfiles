@@ -16,5 +16,15 @@ def fill_lists():
     for anio in range(1990, 2020):
         anios.append(anio)
 
+def fetch_text(arg):
+        """
 
+        Funcion para leer el texto de los entry boxes de nombre.
+
+        PARAMETRO:
+        arg: este argumento es cualquier Entry widget
+        regresa lo que este dentro.
+
+        """
+        return arg.get()
 fill_lists()
