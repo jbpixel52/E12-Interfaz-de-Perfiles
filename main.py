@@ -4,8 +4,7 @@ from PIL import Image, ImageGrab
 from tkinter import messagebox
 from logica_registro import *
 
-print('pendejo el q lo leA xd')
-root = Tk()
+root = Tk()  
 #root.overrideredirect(True) # removes title bar
 
 img = ImageGrab.grab()
