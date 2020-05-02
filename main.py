@@ -9,7 +9,7 @@ root = Tk()
 #root.overrideredirect(True) # removes title bar
 
 img = ImageGrab.grab()
-
+#Cambio de prueba
 
 def get_screen_size():
     temp = str(img.size)
