@@ -17,16 +17,12 @@ def json_read():
 
 def windows_logic():
     """ Procesos y transiciones entre las ventanas."""
-    x=2
-    for i in range(0, x):
-        x += 1
-        if json_read() > 0:
-                diseñoListaPerfiles.Lista()
-                disenoAgregar.Agregar()
-        elif json_read() < 1:
-                """AQUI VA LA VENTANA DE VACIO."""
-                diseñoSinRegistros.root()
-                disenoAgregar.Agregar()
+    if json_read() < 1:
+        """AQUI VA LA VENTANA DE VACIO."""
+        diseñoSinRegistros.root()
+        disenoAgregar.Agregar()
+    elif json_read() > 0:
+        diseñoListaPerfiles.Lista()
 
 
 windows_logic()

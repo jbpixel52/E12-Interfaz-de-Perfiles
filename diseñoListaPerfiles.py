@@ -1,3 +1,5 @@
+import json
+from disenoAgregar import json_read, datos
 import tkinter as tk
 from PIL import ImageTk, Image
 import tkinter.font as tkFont
@@ -62,7 +64,6 @@ Fecha3 = tk.Label(master=seccion2, bg='white', fg='gray',
 Fecha3.place(anchor=tk.NW, relx=0.22, rely=0.41)
 
 
-
 botonMas = tk.Button(master=seccion2,
                      bg='green',
                      fg='white',
@@ -71,5 +72,22 @@ botonMas = tk.Button(master=seccion2,
                      width=5, command=Lista.destroy)
 botonMas.place(anchor=tk.SE, relx=0.99, rely=0.99)
 
+l_alumn = []
+json_read()
+indice = 0
+relX = 0.22
+relY = 0.36
+for alumno in datos['alumno']:
+    fecha = str(alumno.get('Dia'))+str(alumno.get('Mes'))+str(alumno.get('Anio'))
+    l_alumn[indice] = tk.Label(master=seccion2, bg='white', fg='black',
+                               text=alumno.get('Nombre'), font=tkFont.Font(family='Roboto', size=10)).place(anchor=tk.NW, relx=relX, rely=relY)
+    indice += 1
+    relX += 0
+    relY = 0.13
+    l_alumn[indice] = Fecha1 = tk.Label(master=seccion2, bg='white', fg='gray',
+                                        text=fecha, font=tkFont.Font(family='Roboto', size=8)).place(anchor=tk.NW, relx=relX, rely=relY)
+    indice += 1
+    relX += 0
+    relY = 0.13
 
 Lista.mainloop()

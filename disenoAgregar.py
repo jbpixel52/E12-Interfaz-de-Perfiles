@@ -48,7 +48,7 @@ def data_proccesses():
     get_data()
     json_read()
     json_write()
-    Agregar.destroy
+    Agregar.destroy()
 
 """ _______________ """
 
@@ -69,7 +69,7 @@ label1 = tk.Label(master=seccion1,
                   )
 label1.place(anchor=tk.NW, relx=0.3, rely=0.2)
 
-back = tk.Button(master=seccion1, bg='green', image=im, height=30, width=30, command=    Agregar.destroy
+back = tk.Button(master=seccion1, bg='green', image=im, height=30, width=30, command=Agregar.destroy
 )
 back.place(anchor=tk.NW, relx=0.1, rely=0.2)
 

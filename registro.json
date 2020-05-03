@@ -1,5 +1,31 @@
 {
   "alumnos": [
-
+    {
+      "Nombre": "JULIO",
+      "Apellido Paterno": "BRAMBILA",
+      "Apellido Materno": "CABRALES",
+      "Dia": "29",
+      "Mes": "9",
+      "Anio": "2001",
+      "Descripcion": "XD"
+    },
+    {
+      "Nombre": "",
+      "Apellido Paterno": "",
+      "Apellido Materno": "",
+      "Dia": "",
+      "Mes": "",
+      "Anio": "",
+      "Descripcion": ""
+    },
+    {
+      "Nombre": "",
+      "Apellido Paterno": "",
+      "Apellido Materno": "",
+      "Dia": "",
+      "Mes": "",
+      "Anio": "",
+      "Descripcion": ""
+    }
   ]
 }
