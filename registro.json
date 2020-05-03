@@ -1,11 +1,20 @@
 {
-    "alumnos":{"Nombre":"Moises",
-    "Apellido Paterno":"Gana",
-    "Apellido Materno":"Obregon",
-    "Descripcion":"Profesor de Cetys",
-    "Dia de nacimiento": "17",
-    "Mes de nacimiento": "02",
-    "Año de nacimiento": "1994"}
+    "alumnos": [{
+            "Nombre": "Moises",
+            "Apellido Paterno": "Gana",
+            "Apellido Materno": "Obregon",
+            "Descripcion": "Profesor de Cetys",
+            "Dia": "17",
+            "Mes": "02",
+            "Año": "1994"
+        },
 
-    }
+        {
+            "Nombre": "Julio",
+            "Apellido Paterno": "Brambila",
+            "Apellido Materno": "Cabrales",
+            "Descripcion": "ADASDASDASD"
+        }
+    ]
 
+}
