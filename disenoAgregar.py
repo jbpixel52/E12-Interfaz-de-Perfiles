@@ -1,11 +1,57 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 import tkinter.font as tkFont
-import logica_registro as LogReg
+from json import *
 screenSize = {'width': 360, 'height': 640}
 
-
 Agregar = tk.Tk()
+
+datos = ""
+personales = {}
+
+
+def get_data():
+    """HACER LOS DATOS UN DICT."""
+    global personales
+    personales["Nombre"] = myEntry1.get()
+    personales["Apellido Paterno"] = myEntry2.get()
+    personales["Apellido Materno"] = myEntry3.get()
+    personales["Dia"] = myEntry4.get()
+    personales["Mes"] = myEntry5.get()
+    personales["Anio"] = myEntry6.get()
+    personales["Descripcion"] = myEntry7.get()
+    print('AGREGADOS')
+
+
+def json_read():
+    """Leer datos de cada alumno."""
+    global datos
+    with open('registro.json') as f:
+        datos = load(f)
+    print(datos)
+    print(type(datos['alumnos']))
+    datos['alumnos'].append(personales)
+    for alumno in datos['alumnos']:
+        print(alumno.get('Nombre'))
+
+
+def json_write():
+    """Agrega alumnos al json."""
+    global datos
+    global personales
+    with open('registro.json', "w") as f:
+        dump(datos, f, indent=2)
+
+
+def data_proccesses():
+    """ Todas las otras funciones de I/O."""
+    get_data()
+    json_read()
+    json_write()
+    Agregar.destroy
+
+""" _______________ """
+
 Agregar.title('Agregar')
 Agregar.minsize(screenSize['width'], screenSize['height'])
 Agregar.resizable(False, False)
@@ -23,7 +69,8 @@ label1 = tk.Label(master=seccion1,
                   )
 label1.place(anchor=tk.NW, relx=0.3, rely=0.2)
 
-back = tk.Button(master=seccion1, bg='green', image=im, height=30, width=30)
+back = tk.Button(master=seccion1, bg='green', image=im, height=30, width=30, command=    Agregar.destroy
+)
 back.place(anchor=tk.NW, relx=0.1, rely=0.2)
 
 
@@ -76,8 +123,9 @@ myEntry7.place(anchor=tk.NW, relx=0.055, rely=0.50, height=150)
 # Agregar
 
 botonAgregar = tk.Button(master=seccion2, text='Agregar', bg='green',
-                         fg='white', font=tkFont.Font(family='Roboto', size=14))
+                         fg='white', font=tkFont.Font(family='Roboto', size=14), command=data_proccesses)
 botonAgregar.place(anchor=tk.CENTER, relx=0.5,
-                   rely=0.9, command=LogReg.get_data())
+                   rely=0.9)
 
 Agregar.mainloop()
+

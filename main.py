@@ -1,33 +1,32 @@
 from tkinter import *
 from PIL import Image, ImageGrab
 from tkinter import messagebox
-from logica_registro import *
+from json import *
+import diseñoSinRegistros
+import diseñoListaPerfiles
+import disenoAgregar
 
-root = Tk()
-root.resizable(False, False)
-root.geometry("360x640")
-root.title('REGISTRO DE ALUMNOS')
-
-
-def remove_title_bar():
-    """Remueve la barra de titulo de Windows y la hace snap."""
-    root.overrideredirect(True)  # removes title bar
-
-
-class App:
-    """CLASE donde se inicializa el programa."""
-
-    def __init__(self, master):
-        """INICIALIZACION DEL APP."""
-    
-
-    def func_egg(self):
-        """PEQUENO EASTER EGG DE PRUEBA."""
-        return messagebox.showinfo('Easter Egg', 'EL JAJAS ESTUVO AQUI XD')
+def json_read():
+    """Leer datos de cada alumno."""
+    first_read = ""
+    with open('registro.json') as f:
+        first_read = load(f)
+        print(type(first_read))
+        return len(first_read['alumnos'])
 
 
-app = App(root)
-app.initial_window()
+def windows_logic():
+    """ Procesos y transiciones entre las ventanas."""
+    x=2
+    for i in range(0, x):
+        x += 1
+        if json_read() > 0:
+                diseñoListaPerfiles.Lista()
+                disenoAgregar.Agregar()
+        elif json_read() < 1:
+                """AQUI VA LA VENTANA DE VACIO."""
+                diseñoSinRegistros.root()
+                disenoAgregar.Agregar()
 
 
-mainloop()
+windows_logic()

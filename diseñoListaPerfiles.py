@@ -68,7 +68,7 @@ botonMas = tk.Button(master=seccion2,
                      fg='white',
                      text='+',
                      font=tkFont.Font(family='Roboto', size=15),
-                     width=5)
+                     width=5, command=Lista.destroy)
 botonMas.place(anchor=tk.SE, relx=0.99, rely=0.99)
 
 
